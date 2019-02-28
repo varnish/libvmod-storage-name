@@ -1,0 +1,22 @@
+varnishtest "Test storage_name vmod"
+
+server s1 {
+       rxreq
+       txresp
+} -start
+
+varnish v1 -vcl+backend {
+	import storage_name from "${vmod_topbuild}/src/.libs/libvmod_storage_name.so";
+
+	sub vcl_deliver {
+		set resp.http.storage_name = storage_name.get();
+		set resp.http.storage_type = storage_name.type();
+	}
+} -start
+
+client c1 {
+	txreq -url "/"
+	rxresp
+	expect resp.http.storage_name == "s0"
+	expect resp.http.storage_type == "malloc"
+} -run
