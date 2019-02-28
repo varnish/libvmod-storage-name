@@ -25,39 +25,38 @@ in the client side.
 CONTENTS
 ========
 
-* :ref:`func_get`
-* :ref:`func_type`
-
-.. _func_get:
-
 STRING get()
 ------------
 
 Prototype
+
   STRING get()
 
 Description
+
   Get the name of the current storage. Any problems results with '""' being returned.
 
 Example
-  set req.http.storage_name = storage_name.get();
 
-.. _func_type:
+  set req.http.storage_name = storage_name.get();
 
 STRING type()
 -------------
 
 Prototype
+
   STRING type()
 
 Description
+
   Get the type of the current storage. Any problems results with '""' being returned.
 
 Example
+
   set req.http.storage_type = storage_name.type();
 
 
 INSTALLATION
 ============
 
-This will only copmile with Varnish Cache Plus 4.1
+This will only compile with Varnish Cache Plus 4.1
