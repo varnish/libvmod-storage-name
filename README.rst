@@ -2,6 +2,8 @@
 vmod_storage_name
 ============
 
+**compatibility note: this vmod only targets Varnish version 4.1. Older versions were not tested, and newer versions can accomplish the same thing with pure VCL.**
+
 ----------------------
 Varnish storage_name Module
 ----------------------
